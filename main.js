@@ -45,8 +45,16 @@ moneyBoxRange.addEventListener('input', event => {
     const totalPrecentElement = document.getElementById('total-precents');
     totalPrecents = event.target.value;
     totalPrecentElement.innerHTML = totalPrecents;
+    calculationPrecents();
 
 });
+
+const calculationPrecents = () => {
+    if (totalMonth > 0) {
+    accumulation = ((totalMonth * totalPrecents) / 100).toFixed();
+    accumulationInput.value = accumulation;
+    }
+}
 
 
 

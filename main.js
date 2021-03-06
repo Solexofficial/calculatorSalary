@@ -23,6 +23,7 @@ const moneyBoxRange = document.getElementById('money-box-range'),
 
 let accumulation = 0;
 let totalPrecents = 0;
+// ====== //
 
 
 

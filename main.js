@@ -23,7 +23,32 @@ const moneyBoxRange = document.getElementById('money-box-range'),
 
 let accumulation = 0;
 let totalPrecents = 0;
-// ====== //
+
+const inputs = document.querySelectorAll('.input');
+for(const input of inputs) {
+    input.addEventListener('input', () => {
+        countingAvailableMoney();
+    })
+}
+
+const strToNum = str => str.value ? parseInt(str.value) : 0
+
+const countingAvailableMoney = () => {
+    const totalPerMonth = strToNum(incomeSalary) + strToNum(incomeFreelance) + strToNum(incomeExtra1) + strToNum(incomeExtra2);
+    const totalCosts = strToNum(costsFlat) + strToNum(costsHouseServices) + strToNum(costsTransport) + strToNum(costsCredit);
+
+    totalMonth = totalPerMonth - totalCosts;
+    totalMonthInput.value = totalMonth;
+}
+
+moneyBoxRange.addEventListener('input', event => {
+    const totalPrecentElement = document.getElementById('total-precents');
+    totalPrecents = event.target.value;
+    totalPrecentElement.innerHTML = totalPrecents;
+
+});
+
+
 
 
 

@@ -116,6 +116,10 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
+#money-box-range {
+    cursor: pointer;
+}
+
 #slider-range {
     height: 2px;
     background-color: #D1D1D1;
